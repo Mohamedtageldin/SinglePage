@@ -1,0 +1,22 @@
+{
+  "name": "SinglePage",
+  "version": "1.0.0",
+  "description": "SinglePageApp",
+  "author": "Mohamed Tageldin",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^2.0.0",
+    "vue-youtube-embed": "^2.2.2"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "install": "^0.13.0",
+    "push-dir": "^0.4.1"
+  }
+}
