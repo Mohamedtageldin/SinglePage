@@ -1,10 +1,12 @@
 <template>
   <div class="container">
-    <div id="video">
       <section>
         <youtube :video-id="'zmj3AEmb9Do'"></youtube>
+        <youtube :video-id="'80LnsHSAfqQ'"></youtube>
+        <youtube :video-id="'10wsbG9IsAo'"></youtube>
+        <youtube :video-id="videos[1]"></youtube>
+        <youtube :video-id="videos[0]"></youtube>
       </section>
-    </div>
   </div>
 </template>
 
@@ -13,26 +15,17 @@ import Vue from 'vue'
 import VueYouTubeEmbed from 'vue-youtube-embed'
 Vue.use(VueYouTubeEmbed)
 
-const app = new Vue({
-  el: '#video',
-  render: function(createElement) {
-        return createElement(app)
-    },
-  data: {
-    videoId: 'zmj3AEmb9Do'
-  },
-  methods: {
-    ready (event) {
-      this.player = event.target
-    },
-    playing (event) {
-      console.log('We Now playing a video')
-    }
-  }
-})
 export default {
-  //runtimeCompiler: true,
-  app,
+  data(){
+    return{
+      videos : []
+    }
+  },created(){
+    let video1 ="5dVIlru5LH8"
+    let video2 = this.$youtube.getIdFromURL("https://youtu.be/btw3O0zJj-Q")
+    this.videos.push(video1)
+    this.videos.push(video2)
+  },
     components: {
         Vue, VueYouTubeEmbed
     }
