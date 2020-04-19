@@ -1,11 +1,11 @@
 <template>
   <div class="container">
       <section>
-        <youtube :video-id="'zmj3AEmb9Do'"></youtube>
+        <youtube :video-id="videos[0]"></youtube>
         <youtube :video-id="'80LnsHSAfqQ'"></youtube>
         <youtube :video-id="'10wsbG9IsAo'"></youtube>
         <youtube :video-id="videos[1]"></youtube>
-        <youtube :video-id="videos[0]"></youtube>
+        <youtube :video-id="videos[2]"></youtube>
       </section>
   </div>
 </template>
@@ -21,10 +21,13 @@ export default {
       videos : []
     }
   },created(){
+    //Two alternative ways to make the code dynamic
     let video1 ="5dVIlru5LH8"
     let video2 = this.$youtube.getIdFromURL("https://youtu.be/btw3O0zJj-Q")
+    let video3 = this.$youtube.getIdFromURL("https://youtu.be/Kqig3RF6hPQ")
     this.videos.push(video1)
     this.videos.push(video2)
+    this.videos.push(video3)
   },
     components: {
         Vue, VueYouTubeEmbed
